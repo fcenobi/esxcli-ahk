@@ -16,23 +16,18 @@ cmdChoiceGui(choiceArr)
 
     i := choiceArr.MaxIndex()
     choiceStr := Join("|",choiceArr*)
-    Gui, Add, ListBox, vMyListBox r%i%, %choiceStr%
+    Gui, Add, ListBox, vMyChoice r%i% w500, %choiceStr%
     Gui, Add, Button, Default, OK
     GuiControl, Hide, OK
 
-    Gui, Show, AutoSize,NoActivate
+    Gui, Show, AutoSize, NoActivate
     return
 
     ButtonOK:
         Gui, Submit
-        MsgBox % MyListBox ;; This is for testing purposes.
+        SendInput, % MyChoice
     return
 }
-
-;; Hit C-0 to test the gui
-^0::
-cmdChoiceGui(["White","Yellow"])
-Return
 
 Esc::Gui Cancel
 
@@ -3844,3 +3839,214 @@ Return
 SendInput, esxcli vsan trace set
 Return
 
+::!esfcnidi::
+cmdChoiceGui(["esxcli fcoe nic disable", "esxcli fcoe nic discover"])
+Return
+
+::!esisaddist::
+cmdChoiceGui(["esxcli iscsi adapter discovery statictarget", "esxcli iscsi adapter discovery status"])
+Return
+
+::!esisneip::
+cmdChoiceGui(["esxcli iscsi networkportal ipconfig", "esxcli iscsi networkportal ipv6config"])
+Return
+
+::!esisneipge::
+cmdChoiceGui(["esxcli iscsi networkportal ipconfig get", "esxcli iscsi networkportal ipv6config get"])
+Return
+
+::!esisneipse::
+cmdChoiceGui(["esxcli iscsi networkportal ipconfig set", "esxcli iscsi networkportal ipv6config set"])
+Return
+
+::!esneipdnse::
+cmdChoiceGui(["esxcli network ip dns search", "esxcli network ip dns server"])
+Return
+
+::!esneipdnsead::
+cmdChoiceGui(["esxcli network ip dns search add", "esxcli network ip dns server add"])
+Return
+
+::!esneipdnseli::
+cmdChoiceGui(["esxcli network ip dns search list", "esxcli network ip dns server list"])
+Return
+
+::!esneipdnsere::
+cmdChoiceGui(["esxcli network ip dns search remove", "esxcli network ip dns server remove"])
+Return
+
+::!esneipinip::
+cmdChoiceGui(["esxcli network ip interface ipv4", "esxcli network ip interface ipv6"])
+Return
+
+::!esneipinipad::
+cmdChoiceGui(["esxcli network ip interface ipv4 address", "esxcli network ip interface ipv6 address"])
+Return
+
+::!esneipinipadli::
+cmdChoiceGui(["esxcli network ip interface ipv4 address list", "esxcli network ip interface ipv6 address list"])
+Return
+
+::!esneipinipge::
+cmdChoiceGui(["esxcli network ip interface ipv4 get", "esxcli network ip interface ipv6 get"])
+Return
+
+::!esneipinipse::
+cmdChoiceGui(["esxcli network ip interface ipv4 set", "esxcli network ip interface ipv6 set"])
+Return
+
+::!esneipne::
+cmdChoiceGui(["esxcli network ip neighbor", "esxcli network ip netstack"])
+Return
+
+::!esneipneli::
+cmdChoiceGui(["esxcli network ip neighbor list", "esxcli network ip netstack list"])
+Return
+
+::!esneipnere::
+cmdChoiceGui(["esxcli network ip neighbor remove", "esxcli network ip netstack remove"])
+Return
+
+::!esneiproip::
+cmdChoiceGui(["esxcli network ip route ipv4", "esxcli network ip route ipv6"])
+Return
+
+::!esneiproipad::
+cmdChoiceGui(["esxcli network ip route ipv4 add", "esxcli network ip route ipv6 add"])
+Return
+
+::!esneiproipli::
+cmdChoiceGui(["esxcli network ip route ipv4 list", "esxcli network ip route ipv6 list"])
+Return
+
+::!esneiproipre::
+cmdChoiceGui(["esxcli network ip route ipv4 remove", "esxcli network ip route ipv6 remove"])
+Return
+
+::!esnenise::
+cmdChoiceGui(["esxcli network nic selftest", "esxcli network nic set"])
+Return
+
+::!esnevsdvvmlast::
+cmdChoiceGui(["esxcli network vswitch dvs vmware lacp stats", "esxcli network vswitch dvs vmware lacp status"])
+Return
+
+::!esnevsdvvmlastge::
+cmdChoiceGui(["esxcli network vswitch dvs vmware lacp stats get", "esxcli network vswitch dvs vmware lacp status get"])
+Return
+
+::!esnevsstpo::
+cmdChoiceGui(["esxcli network vswitch standard policy", "esxcli network vswitch standard portgroup"])
+Return
+
+::!esnevsstpose::
+cmdChoiceGui(["esxcli network vswitch standard policy security", "esxcli network vswitch standard portgroup set"])
+Return
+
+::!esnvdenade::
+cmdChoiceGui(["esxcli nvme device namespace delete", "esxcli nvme device namespace detach"])
+Return
+
+::!esstcocl::
+cmdChoiceGui(["esxcli storage core claiming", "esxcli storage core claimrule"])
+Return
+
+::!esstcoclre::
+cmdChoiceGui(["esxcli storage core claiming reclaim", "esxcli storage core claimrule remove"])
+Return
+
+::!esstcodese::
+cmdChoiceGui(["esxcli storage core device set", "esxcli storage core device setconfig"])
+Return
+
+::!esstnf::
+cmdChoiceGui(["esxcli storage nfs", "esxcli storage nfs41"])
+Return
+
+::!esstnfad::
+cmdChoiceGui(["esxcli storage nfs add", "esxcli storage nfs41 add"])
+Return
+
+::!esstnfli::
+cmdChoiceGui(["esxcli storage nfs list", "esxcli storage nfs41 list"])
+Return
+
+::!esstnfpa::
+cmdChoiceGui(["esxcli storage nfs param", "esxcli storage nfs41 param"])
+Return
+
+::!esstnfpage::
+cmdChoiceGui(["esxcli storage nfs param get", "esxcli storage nfs41 param get"])
+Return
+
+::!esstnfpase::
+cmdChoiceGui(["esxcli storage nfs param set", "esxcli storage nfs41 param set"])
+Return
+
+::!esstnfre::
+cmdChoiceGui(["esxcli storage nfs remove", "esxcli storage nfs41 remove"])
+Return
+
+::!esstsafc::
+cmdChoiceGui(["esxcli storage san fc", "esxcli storage san fcoe"])
+Return
+
+::!esstsafcli::
+cmdChoiceGui(["esxcli storage san fc list", "esxcli storage san fcoe list"])
+Return
+
+::!esstsafcre::
+cmdChoiceGui(["esxcli storage san fc reset", "esxcli storage san fcoe reset"])
+Return
+
+::!esstsafcst::
+cmdChoiceGui(["esxcli storage san fc stats", "esxcli storage san fcoe stats"])
+Return
+
+::!esstsafcstge::
+cmdChoiceGui(["esxcli storage san fc stats get", "esxcli storage san fcoe stats get"])
+Return
+
+::!esstvvva::
+cmdChoiceGui(["esxcli storage vvol vasacontext", "esxcli storage vvol vasaprovider"])
+Return
+
+::!essyse::
+cmdChoiceGui(["esxcli system secpolicy", "esxcli system security", "esxcli system settings"])
+Return
+
+::!essyseke::
+cmdChoiceGui(["esxcli system settings kernel", "esxcli system settings keyboard"])
+Return
+
+::!esvsda::
+cmdChoiceGui(["esxcli vsan dataprotection", "esxcli vsan datastore"])
+Return
+
+::!esvsdare::
+cmdChoiceGui(["esxcli vsan dataprotection recovery", "esxcli vsan datastore remove"])
+Return
+
+::!esvsdemost::
+cmdChoiceGui(["esxcli vsan debug mob start", "esxcli vsan debug mob status", "esxcli vsan debug mob stop"])
+Return
+
+::!esvsneip::
+cmdChoiceGui(["esxcli vsan network ip", "esxcli vsan network ipv4"])
+Return
+
+::!esvsneipad::
+cmdChoiceGui(["esxcli vsan network ip add", "esxcli vsan network ipv4 add"])
+Return
+
+::!esvsneipre::
+cmdChoiceGui(["esxcli vsan network ip remove", "esxcli vsan network ipv4 remove"])
+Return
+
+::!esvsneipse::
+cmdChoiceGui(["esxcli vsan network ip set", "esxcli vsan network ipv4 set"])
+Return
+
+::!esvsnere::
+cmdChoiceGui(["esxcli vsan network remove", "esxcli vsan network restore"])
+Return
