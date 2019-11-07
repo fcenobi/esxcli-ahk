@@ -12,6 +12,7 @@ cmdChoiceGui(choiceArr)
     Gui, Destroy
     Gui Margin, 0, 0
 
+
     Gui, +LastFound +AlwaysOnTop -Caption +ToolWindow
 
     i := choiceArr.MaxIndex()
@@ -27,9 +28,11 @@ cmdChoiceGui(choiceArr)
         Gui, Submit
         SendInput, % MyChoice
     return
-}
 
-Esc::Gui Cancel
+    GuiEscape:
+        Gui, Destroy
+    return
+}
 
 ::!esde::
 SendInput, esxcli device
